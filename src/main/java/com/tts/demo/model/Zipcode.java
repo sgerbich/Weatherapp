@@ -10,29 +10,26 @@ import javax.persistence.Id;
 
 import org.hibernate.annotations.CreationTimestamp;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@Builder
-@AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Zipcode {
-
-    @Id
+public class ZipCode {
+    
+    @Id 
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column(name="recent_zipcode")
-    private String zipCode;
+    @Column(unique = true)
+    private String zip;
 
     @CreationTimestamp
     private Date submittedAt;
 
-    public Zipcode(String zip){
-        this.zipCode= zip;
+    public ZipCode(String zip) {
+        this.zip = zip;
     }
+    
 }

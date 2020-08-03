@@ -10,7 +10,7 @@ import org.springframework.web.client.RestTemplate;
 import java.util.List;
 
 import com.tts.demo.model.Response;
-import com.tts.demo.model.Zipcode;
+import com.tts.demo.model.ZipCode;
 import com.tts.demo.repository.RequestRepository;
 import com.tts.demo.repository.ZipRepository;
 
@@ -26,14 +26,14 @@ public class WeatherService {
     @Autowired
 	private ZipRepository zipRepository;
 	
-	public List<Zipcode> getRecentSearches() {
+	public List<ZipCode> getRecentSearches() {
         return zipRepository.findAll();
     }
 
 
     public Response getForecast(String zipCode) {
 
-		Zipcode zip = new Zipcode(zipCode);
+		ZipCode zip = new ZipCode(zipCode);
         // code to check if zip is already in database
         String url = "http://api.openweathermap.org/data/2.5/weather?zip=" +
                 zipCode + "&units=imperial&appid=" + apiKey;
