@@ -11,6 +11,7 @@ import java.util.List;
 
 import com.tts.demo.model.Response;
 import com.tts.demo.model.Zipcode;
+import com.tts.demo.repository.RequestRepository;
 import com.tts.demo.repository.ZipRepository;
 
 @Service
@@ -18,6 +19,9 @@ public class WeatherService {
 
     @Value("${api_key}")
     private String apiKey;
+
+	@Autowired
+	private RequestRepository rRepo;
 
     @Autowired
 	private ZipRepository zipRepository;

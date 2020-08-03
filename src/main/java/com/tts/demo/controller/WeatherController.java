@@ -33,7 +33,7 @@ public class WeatherController {
 		Response data = weatherService.getForecast(request.getZipCode()); 
 		model.addAttribute("data", data); 
 		List<Zipcode> zipCodeList = weatherService.getRecentSearches();
-        model.addAttribute("request", new Request());
+        
         model.addAttribute("zip_codes", zipCodeList);
 
 		return "index"; 

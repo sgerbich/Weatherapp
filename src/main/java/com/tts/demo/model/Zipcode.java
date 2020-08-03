@@ -1,5 +1,7 @@
 package com.tts.demo.model;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -28,7 +30,7 @@ public class Zipcode {
     private String zipCode;
 
     @CreationTimestamp
-    private Data submittedAt;
+    private Date submittedAt;
 
     public Zipcode(String zip){
         this.zipCode= zip;
